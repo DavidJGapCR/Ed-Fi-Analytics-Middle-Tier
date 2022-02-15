@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
@@ -44,6 +44,7 @@
     <ProjectReference Include="..\EdFi.AnalyticsMiddleTier.DataStandard2\EdFi.AnalyticsMiddleTier.DataStandard2.csproj" />
     <ProjectReference Include="..\EdFi.AnalyticsMiddleTier.DataStandard31\EdFi.AnalyticsMiddleTier.DataStandard31.csproj" />
     <ProjectReference Include="..\EdFi.AnalyticsMiddleTier.DataStandard32\EdFi.AnalyticsMiddleTier.DataStandard32.csproj" />
+    <ProjectReference Include="..\EdFi.AnalyticsMiddleTier.DataStandard33\EdFi.AnalyticsMiddleTier.DataStandard33.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -59,46 +60,11 @@
     <None Update="EdFi_Ods_3.2.dacpac">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="EdFi_Ods_3.3.dacpac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+	<None Include=".env" Condition="Exists('.env')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="TestCases\ContactPersonDim\MSSQL\" />
-    <Folder Include="TestCases\DateDim\MSSQL\" />
-    <Folder Include="TestCases\DateDim\PostgreSQL\" />
-    <Folder Include="TestCases\DefaultMap\MSSQL\" />
-    <Folder Include="TestCases\DefaultMap\PostgreSQL\" />
-    <Folder Include="TestCases\GradingPeriodDim\MSSQL\" />
-    <Folder Include="TestCases\GradingPeriodDim\PostgreSQL\" />
-    <Folder Include="TestCases\LocalEducationAgencyDim\MSSQL\" />
-    <Folder Include="TestCases\SchoolDim\MSSQL\" />
-    <Folder Include="TestCases\SectionDim\PostgreSQL\" />
-    <Folder Include="TestCases\SectionDim\v_3\" />
-    <Folder Include="TestCases\SectionDim\v_2\" />
-    <Folder Include="TestCases\StaffSectionDim\MSSQL\" />
-    <Folder Include="TestCases\StaffSectionDim\PostgreSQL\" />
-    <Folder Include="TestCases\StudentDataAuthorization\MSSQL\" />
-    <Folder Include="TestCases\StudentDataAuthorization\PostgreSQL\" />
-    <Folder Include="TestCases\StudentDisciplineActionDim\MSSQL\" />
-    <Folder Include="TestCases\StudentEarlyWarningFact\MSSQL\" />
-    <Folder Include="TestCases\StudentHistoryDim\MSSQL\" />
-    <Folder Include="TestCases\StudentProgramCohortDim\MSSQL\" />
-    <Folder Include="TestCases\StudentProgramDim\MSSQL\" />
-    <Folder Include="TestCases\StudentProgramDim\PostgreSQL\" />
-    <Folder Include="TestCases\StudentSchoolDemographicsBridge\MSSQL\" />
-    <Folder Include="TestCases\StudentSchoolFoodServiceProgramDim\MSSQL\" />
-    <Folder Include="TestCases\StudentSchoolFoodServiceProgramDim\PostgreSQL\" />
-    <Folder Include="TestCases\StudentSectionDim\MSSQL\" />
-    <Folder Include="TestCases\StudentSectionDim\PostgreSQL\" />
-    <Folder Include="TestCases\StudentSectionGradeFact\MSSQL\" />
-    <Folder Include="TestCases\StudentSectionGradeFact\PostgreSQL\" />
-    <Folder Include="TestCases\UserAuthorization\MSSQL\" />
-    <Folder Include="TestCases\UserAuthorization\PostgreSQL\" />
-    <Folder Include="TestCases\UserDim\MSSQL\" />
-    <Folder Include="TestCases\UserStudentDataAuthorization\MSSQL\" />
-  </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(BuildingInsideVisualStudio)' == 'true'">
-    <Exec Command="IF EXIST .env del $(OutputPath)\.env&#xD;&#xA;IF EXIST .env xcopy .env $(OutputPath)\ /Y" />
-  </Target>
-
 </Project>
