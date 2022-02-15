@@ -134,13 +134,13 @@ function Publish {
 		if ($SelfContained) {
             CleanPublishScdOutputDirectory
             Write-Host "Self contained." -ForegroundColor Cyan
-            dotnet publish $project -c $Configuration /p:EnvironmentName=Production -o "$publishScdOutputDirectory" -f '3.1' --self-contained -r win10-x64 --no-build --nologo
+            dotnet publish $project -c $Configuration /p:EnvironmentName=Production -o "$publishScdOutputDirectory" --self-contained -r win10-x64 --no-build --nologo
         }
         else 
         {
             CleanPublishFddOutputDirectory
             Write-Host "Not self contained." -ForegroundColor Cyan
-            dotnet publish $project -c $Configuration /p:EnvironmentName=Production -o "$publishFddOutputDirectory" -f '3.1' --no-self-contained --no-build --nologo
+            dotnet publish $project -c $Configuration /p:EnvironmentName=Production -o "$publishFddOutputDirectory" --no-self-contained --no-build --nologo
         }
     }
 }
