@@ -75,7 +75,7 @@ jobs:
 
       - name: Upload publish zip
         id: upload-publish-zip-asset 
-        uses: actions/upload-release-asset@48c0418f0e48b7aaf6b7752feec35df6f212beaa  # v1
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -86,7 +86,7 @@ jobs:
 
       - name: Upload self-contained publish zip
         id: upload-publish-self-contained-zip-asset 
-        uses: actions/upload-release-asset@48c0418f0e48b7aaf6b7752feec35df6f212beaa  # v1
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
