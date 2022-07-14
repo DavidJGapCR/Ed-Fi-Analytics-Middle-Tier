@@ -41,8 +41,8 @@ jobs:
     runs-on: Ubuntu-latest
     
     steps:
-      # - name: Checkout code
-      #   uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+      - name: Checkout code
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
         
       - name: Assign release version from .version to Env variable
         run: |
@@ -61,10 +61,10 @@ jobs:
       #     restore-keys: |
       #       ${{ runner.os }}-nuget-
     
-      # - name: Building AMT
-      #   run: |
-      #     .\build.ps1 build -Configuration ${{ env.CONFIGURATION }} -Version ${{ env.BUILD_VERSION }} -BuildCounter ${{ github.run_number }}
-      #   shell: pwsh
+      - name: Building AMT
+        run: |
+          .\build.ps1 build -Configuration ${{ env.CONFIGURATION }} -Version ${{ env.BUILD_VERSION }} -BuildCounter ${{ github.run_number }}
+        shell: pwsh
 
       # - name: Unit Tests
       #   run: |
