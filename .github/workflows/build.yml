@@ -48,11 +48,6 @@ jobs:
         run: |
           echo "BUILD_VERSION=2.9.1" >> $GITHUB_ENV
       
-      - name: Use the value
-        id: step_two
-        run: |
-          echo "${{ env.BUILD_VERSION }}" # This will output '2.9.1'
-      
       - name: Caching packages
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353
         with:
