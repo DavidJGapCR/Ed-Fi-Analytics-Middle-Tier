@@ -46,7 +46,7 @@ jobs:
         
       - name: Assign release version from .version to Env variable
         run: |
-          echo "BUILD_VERSION=2.9.1" >> $GITHUB_ENV
+          cat .version >> $GITHUB_ENV
       
       - name: Caching packages
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353
@@ -94,7 +94,7 @@ jobs:
       
       - name: Assign release version from .version to Env variable
         run: |
-          echo "BUILD_VERSION=2.9.1" >> $GITHUB_ENV
+          cat .version >> $GITHUB_ENV
       
       - name: Caching packages
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353
