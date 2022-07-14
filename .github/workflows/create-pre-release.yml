@@ -31,12 +31,12 @@ jobs:
     runs-on: Ubuntu-latest
    
     steps:
-      - name: Assign release version from version.properties to Env variable
-        run: |
-          cat .version >> $GITHUB_ENV    
-
       - name: Checkout code
         uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+        
+      - name: Assign release version from version.properties to Env variable
+        run: |
+          cat .version >> $GITHUB_ENV
       
       - name: Caching packages
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353
